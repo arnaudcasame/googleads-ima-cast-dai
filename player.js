@@ -248,6 +248,9 @@ class Player {
       const streamRequest = (imaRequestData.assetKey) ?
           new google.ima.dai.api.LiveStreamRequest(imaRequestData) :
           new google.ima.dai.api.VODStreamRequest(imaRequestData);
+      streamRequest.adTagParameters = {
+        debug_experiment_id: "27390317"
+      };
       this.streamManager_.requestStream(streamRequest);
       document.getElementById('splash').style.display = 'none';
 
